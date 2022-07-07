@@ -1,0 +1,72 @@
+﻿@model List<Skill>
+
+@{
+    ViewBag.Title = "Yeteneklerim";
+    Layout = "_AdminLayout";
+}
+
+<a class="btn btn-md btn-success ml-3 mb-3" asp-area="Admin" asp-controller="Skill" asp-action="Add">
+    <span class="mdi mdi-plus-circle"></span> Yetenek Ekle
+</a>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeteneklerim</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Başlık</th>
+                            <th>Oran</th>
+                            <th class="text-right">İşlemler</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var skill in Model)
+                        {
+                            <tr>
+                                <th>@skill.SkillId</th>
+
+                                <td>@skill.Title</td>
+
+                                <td>
+                                    <label>@skill.Value%</label>
+                                    <div>
+                                        <div class="progress">
+                                            @{
+                                                int skillValue = Convert.ToInt16(skill.Value);
+                                                string skillClass = "";
+                                                if (skillValue > 50)
+                                                    skillClass = "bg-success";
+                                                else if (skillValue > 20 && skillValue <= 50)
+                                                    skillClass = "bg-warning";
+                                                else
+                                                    skillClass = "bg-danger";
+                                            }
+                                            <div class="progress-bar @skillClass" role="progressbar" aria-valuenow="@skill.Value" aria-valuemin="0" aria-valuemax="100" style="width: @skill.Value%;"></div>
+                                        </div>
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <div class="dropdown text-right">
+                                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> İşlemler </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6" style="">
+                                            <a class="dropdown-item text-white" asp-area="Admin" asp-controller="Skill" asp-action="Update" asp-route-skillId="@skill.SkillId">Düzenle</a>
+                                            <a class="dropdown-item text-white" asp-area="Admin" asp-controller="Skill" asp-action="Delete" asp-route-skillId="@skill.SkillId">Sil</a>
+                                        </div>
+                                    </div>                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

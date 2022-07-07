@@ -1,0 +1,58 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using NuGet.Protocol
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Serdeha Admin | @ViewBag.Title</title>
+    <link rel="stylesheet" href="~/adminTemplate/assets/css/style.css">
+    <link rel="shortcut icon" href="~/adminTemplate/assets/images/favicon.png" />
+    @await Html.PartialAsync("_AdminCssPartialView")
+</head>
+<body>
+    <div class="container-scroller">
+        <!-- partial:~/adminTemplate/partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+            <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
+                <a class="sidebar-brand brand-logo" href="~/adminTemplate/index.html"><img src="~/adminTemplate/assets/images/logo.svg" alt="logo" /></a>
+                <a class="sidebar-brand brand-logo-mini" href="~/adminTemplate/index.html"><img src="~/adminTemplate/assets/images/logo-mini.svg" alt="logo" /></a>
+            </div>
+            @await Html.PartialAsync("_AdminNavbarPartialView")
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:~/adminTemplate/partials/_navbar.html -->
+            @await Html.PartialAsync("_AdminTopbarPartialView")
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="page-header">
+                        @await Html.PartialAsync("_AdminBreadcrumbPartialView")
+                    </div>
+                    <div class="row">
+                        @RenderBody()
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:~/adminTemplate/partials/_footer.html -->
+                @await Html.PartialAsync("_AdminFooterPartialView")
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    @await Html.PartialAsync("_AdminJsPartialView")
+    
+    @if (IsSectionDefined("Scripts"))
+    {
+        @RenderSection("Scripts",true)
+    }
+</body>
+</html>

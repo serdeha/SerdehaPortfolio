@@ -1,0 +1,53 @@
+﻿@model List<UserMessage>
+
+
+
+<div class="col-md-6 col-xl-4 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex flex-row justify-content-between">
+                <h4 class="card-title">Mesajlar</h4>
+                <a class="text-muted mb-1 small" asp-area="Admin" asp-controller="Message" asp-action="Index">Hepsini Göster</a>
+            </div>
+            <div class="preview-list">
+                @foreach (var message in Model)
+                {
+                    <div class="preview-item border-bottom">
+                        <div class="preview-thumbnail">
+                            <img src="~/adminTemplate/assets/images/faces/face6.jpg" alt="@message.Title" class="rounded-circle"/>
+                        </div>
+                        <div class="preview-item-content d-flex flex-grow">
+                            <div class="flex-grow">
+                                <div class="d-flex d-md-block d-xl-flex justify-content-between">
+                                    <h6 class="preview-subject">@message.Title</h6>
+                                    <p class="text-muted text-small">@message.Date</p>
+                                </div>
+                                <p class="text-muted">
+                                    @{
+                                        string selectedMessage = "";
+                                        if (message.Content != null)
+                                        {
+                                            if (message.Content.Length > 160)
+                                            {
+                                                selectedMessage = message.Content.Substring(0, 150);
+                                            }
+                                            else if (message.Content.Length >= 100 && message.Content.Length <= 160)
+                                            {
+                                                selectedMessage = message.Content.Substring(0, 100);
+                                            }
+                                            else 
+                                            {
+                                                selectedMessage = message.Content.Substring(0, 10);
+                                            }
+                                        }
+                                    }
+                                    @selectedMessage
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

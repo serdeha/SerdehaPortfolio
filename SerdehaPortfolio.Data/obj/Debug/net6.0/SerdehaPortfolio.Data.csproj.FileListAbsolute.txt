@@ -1,0 +1,15 @@
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\bin\Debug\net6.0\SerdehaPortfolio.Data.deps.json
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\bin\Debug\net6.0\SerdehaPortfolio.Data.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\bin\Debug\net6.0\SerdehaPortfolio.Data.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\bin\Debug\net6.0\SerdehaPortfolio.Entity.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\bin\Debug\net6.0\SerdehaPortfolio.Entity.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.csproj.AssemblyReference.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.AssemblyInfoInputs.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.AssemblyInfo.cs
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.csproj.CoreCompileInputs.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.csproj.CopyComplete
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\refint\SerdehaPortfolio.Data.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\SerdehaPortfolio.Data.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Data\obj\Debug\net6.0\ref\SerdehaPortfolio.Data.dll

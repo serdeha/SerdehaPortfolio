@@ -1,0 +1,55 @@
+﻿@model Portfolio
+@{
+    ViewBag.Title = "Proje Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Proje Ekle</h4>
+            <form asp-area="Admin" asp-action="Add" asp-controller="Portfolio" method="post" enctype="multipart/form-data">
+
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Adı</label>
+                    <input type="text" class="form-control" placeholder="Proje Adı Giriniz" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Website Adı</label>
+                    <input type="text" class="form-control" placeholder="Proje Adını Giriniz" asp-for="WebsiteName">
+                    <span asp-validation-for="WebsiteName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Website Adresi</label>
+                    <input type="text" class="form-control" placeholder="Proje Adresini Giriniz" asp-for="WebsiteUrl">
+                    <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Resmi</label>
+                    <input type="file" class="form-control-file" asp-for="ImageFormFile">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Thumbnail Resmi</label>
+                    <input type="file" class="form-control-file" asp-for="ThumbnailFormFile">
+                    <span asp-validation-for="ThumbnailImageUrl" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a class="btn btn-danger text-right" asp-area="Admin" asp-controller="Portfolio" asp-action="Index">Vazgeç</a>
+            </form>
+        </div>
+    </div>
+</div>

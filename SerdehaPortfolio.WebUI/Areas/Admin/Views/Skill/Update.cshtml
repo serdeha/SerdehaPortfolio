@@ -1,0 +1,62 @@
+﻿@model Skill
+
+@{
+    ViewBag.Title = $"{Model.Title} Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">@Model.Title Yeteneğini Güncelle</h4>
+            <form asp-area="Admin" asp-action="Update" asp-controller="Skill" method="post">
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+                <input type="hidden" asp-for="SkillId" />
+
+                <div class="form-group">
+                    <div class="col-md-2">
+                       <label>Şu anki Yetenek Oranı : </label>@Model.Value%
+                        @if (Model.Value != null)
+                        {
+                            <div class="progress">
+                                @{
+                                    int skillValue = Convert.ToInt16(Model.Value);
+                                    string skillClass = "";
+                                    if (skillValue > 50)
+                                        skillClass = "bg-success";
+                                    else if (skillValue > 20 && skillValue <= 50)
+                                        skillClass = "bg-warning";
+                                    else
+                                        skillClass = "bg-danger";
+                                }
+                                <div class="progress-bar @skillClass" role="progressbar" aria-valuenow="@Model.Value" aria-valuemin="0" aria-valuemax="100" style="width: @Model.Value%;"></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Yetenek Adı</label>
+                    <input type="text" class="form-control" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Yetenek Oranı</label>
+                    <input type="number" class="form-control" asp-for="Value">
+                    <span asp-validation-for="Value" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a asp-action="Index" class="btn btn-danger">Vazgeç</a>
+            </form>
+        </div>
+    </div>
+</div>

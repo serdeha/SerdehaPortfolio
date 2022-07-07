@@ -1,0 +1,17 @@
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Business.deps.json
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Business.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Business.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Data.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Entity.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Data.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\bin\Debug\net6.0\SerdehaPortfolio.Entity.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.csproj.AssemblyReference.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.AssemblyInfoInputs.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.AssemblyInfo.cs
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.csproj.CoreCompileInputs.cache
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.csproj.CopyComplete
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\refint\SerdehaPortfolio.Business.dll
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\SerdehaPortfolio.Business.pdb
+D:\Dersler\Net6Dersleri\SerdehaPortfolio\SerdehaPortfolio.Business\obj\Debug\net6.0\ref\SerdehaPortfolio.Business.dll

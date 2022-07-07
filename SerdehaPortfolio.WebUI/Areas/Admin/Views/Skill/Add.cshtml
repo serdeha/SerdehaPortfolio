@@ -1,0 +1,38 @@
+﻿@model Skill
+@{
+    ViewBag.Title = "Yetenek Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yetenek Ekle</h4>
+            <form asp-area="Admin" asp-action="Add" asp-controller="Skill" method="post">
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+                <div class="form-group">
+                    <label>Yetenek Adı</label>
+                    <input type="text" class="form-control" placeholder="Yetenek Giriniz" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Yetenek Değeri</label>
+                    <input type="number" class="form-control" placeholder="Değer Giriniz" asp-for="Value">
+                    <span asp-validation-for="Value" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a class="btn btn-danger text-right" asp-area="Admin" asp-controller="Skill" asp-action="Index">Vazgeç</a>
+
+            </form>
+        </div>
+    </div>
+</div>

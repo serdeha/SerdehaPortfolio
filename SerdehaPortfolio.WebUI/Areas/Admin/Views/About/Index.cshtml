@@ -1,0 +1,75 @@
+﻿@model About
+@{
+    ViewBag.Title = "Hakkımda Düzenle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Hakkımda Sayfasını Güncelle</h4>
+            <form asp-area="Admin" asp-action="Index" asp-controller="About" method="post" enctype="multipart/form-data">
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+                <input type="hidden" asp-for="AboutId" />
+                <input type="hidden" asp-for="ImageUrl" />
+
+                <div class="form-group">
+                    <label class="form-control-label">Başlık</label>
+                    <input type="text" class="form-control" placeholder="Sunum Adı Giriniz" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Telefon</label>
+                    <input type="text" class="form-control" placeholder="Sunum Başlığı Giriniz" asp-for="Phone">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Yaş</label>
+                    <input type="text" class="form-control" placeholder="Sunum İçeriği Giriniz" asp-for="Age">
+                    <span asp-validation-for="Age" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Adres</label>
+                    <input type="text" class="form-control" placeholder="Sunum İçeriği Giriniz" asp-for="Address">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Mail</label>
+                    <input type="text" class="form-control" placeholder="Sunum İçeriği Giriniz" asp-for="Mail">
+                    <span asp-validation-for="Mail" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Açıklaması</label>
+                    <textarea class="form-control" rows="10" cols="3" asp-for="Description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Şu anki Resim</label>
+                    <img src="~/img/about/@Model.ImageUrl" style="width: 70px;height: 70px" class="form-control img-fluid img-thumbnail" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Resim</label>
+                    <input type="file" class="form-control-file" asp-for="FormFile">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                <a class="btn btn-danger text-right" asp-area="Admin" asp-controller="Home" asp-action="Index">Vazgeç</a>
+            </form>
+        </div>
+    </div>
+</div>

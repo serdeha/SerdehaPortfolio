@@ -1,0 +1,71 @@
+﻿@model List<Portfolio>
+@{
+    ViewBag.Title = "Projelerim";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<a class="btn btn-md btn-success ml-3 mb-3" asp-area="Admin" asp-controller="Portfolio" asp-action="Add">
+    <span class="mdi mdi-plus-circle"></span> Proje Ekle
+</a>
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Projelerim</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Başlık</th>
+                            <th>Proje Site İsmi</th>
+                            <th>Proje Site Adresi</th>
+                            <th>Proje Resmi</th>
+                            <th>Thumbnail Resmi</th>
+                            <th>İşlemler</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="list">
+                        @foreach (var portfolio in Model)
+                        {
+                            <tr>
+                                <th>@portfolio.PortfolioId</th>
+
+                                <td>@portfolio.Name</td>
+
+                                <td>@portfolio.WebsiteName</td>
+
+                                <td>@portfolio.WebsiteUrl</td>
+
+                                <td>
+                                    <img src="~/img/portfolios/@portfolio.ImageUrl" alt="@portfolio.Name" style="width: 50px;height: 50px" class="rounded-circle" />
+                                </td>
+
+                                <td>
+                                    <img src="~/img/portfolios/portfolioThumbnails/@portfolio.ThumbnailImageUrl" alt="@portfolio.Name" style="width: 50px;height: 50px" class="rounded-circle" />
+                                </td>
+
+                                @* <td class="budget">
+                            <img src="~/img/experiences/@experience.ImageUrl" alt="@experience.Name" style="width: 30px;height: 30px"/>
+                            </td>*@
+
+
+                                <td>
+                                    <div class="dropdown">
+                                        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> İşlemler </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton6" style="">
+                                            <a class="dropdown-item text-white" asp-area="Admin" asp-controller="Portfolio" asp-action="Update" asp-route-portfolioId="@portfolio.PortfolioId">Düzenle</a>
+                                            <a class="dropdown-item text-white" asp-area="Admin" asp-controller="Portfolio" asp-action="Delete" asp-route-portfolioId="@portfolio.PortfolioId">Sil</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

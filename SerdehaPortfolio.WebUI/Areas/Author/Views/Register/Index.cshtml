@@ -1,0 +1,105 @@
+﻿@model UserRegisterViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Serdeha Yazar | Kayıt Ol</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="~/authorTemplate/vendors/feather/feather.css">
+    <link rel="stylesheet" href="~/authorTemplate/vendors/ti-icons/css/themify-icons.css">
+    <link rel="stylesheet" href="~/authorTemplate/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="~/authorTemplate/css/vertical-layout-light/style.css">
+    <!-- endinject -->
+    <link rel="shortcut icon" href="~/authorTemplate/images/favicon.png" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth px-0">
+                <div class="row w-100 mx-0">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+                            <div class="brand-logo">
+                                <img src="~/authorTemplate/images/logo.svg" alt="logo">
+                            </div>
+                            <h4>Burada yeni misin ?</h4>
+                            <h6 class="font-weight-light">Üye olmak çok kolay! Vaktini almayacak.</h6>
+
+
+                            <form class="pt-3" asp-controller="Register" asp-action="Index" asp-area="Author" method="post" enctype="multipart/form-data">
+                                @if (ViewData.ModelState.ErrorCount > 0)
+                                {
+                                    <div class="alert alert-danger" asp-validation-summary="All"></div>
+                                }
+                                
+                                <div class="form-group">
+                                    <label asp-for="FirstName"></label>
+                                    <input type="text" class="form-control form-control-lg" asp-for="FirstName" placeholder="Adınızı giriniz">
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName"></label>
+                                    <input type="text" class="form-control form-control-lg" asp-for="LastName" placeholder="Soyadınızı giriniz">
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="UserName"></label>
+                                    <input type="text" class="form-control form-control-lg" asp-for="UserName" placeholder="Kullanıcı adınızı giriniz">
+                                    <span asp-validation-for="UserName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Mail"></label>
+                                    <input type="email" class="form-control form-control-lg" asp-for="Mail" placeholder="E-posta adresinizi giriniz">
+                                    <span asp-validation-for="Mail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ImageFile"></label>
+                                    <input type="file" class="form-control-file form-control-lg" asp-for="ImageFile">
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Password"></label>
+                                    <input type="password" class="form-control form-control-lg" asp-for="Password" placeholder="Şifrenizi giriniz">
+                                    <span asp-validation-for="Password" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ConfirmPassword"></label>
+                                    <input type="password" class="form-control form-control-lg" asp-for="ConfirmPassword" placeholder="Şifrenizi tekrar giriniz">
+                                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                                </div>
+                                <div class="mt-3">
+                                    <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Kayıt Ol</button>
+                                </div>
+                                <div class="text-center mt-4 font-weight-light">
+                                    Zaten bir hesabın var mı? <a asp-controller="Login" asp-action="Index" asp-area="Author" class="text-primary">Giriş Yap</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- content-wrapper ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <script src="~/authorTemplate/vendors/js/vendor.bundle.base.js"></script>
+    <script src="~/authorTemplate/js/off-canvas.js"></script>
+    <script src="~/authorTemplate/js/hoverable-collapse.js"></script>
+    <script src="~/authorTemplate/js/template.js"></script>
+    <script src="~/authorTemplate/js/settings.js"></script>
+    <!-- endinject -->
+</body>
+
+</html>

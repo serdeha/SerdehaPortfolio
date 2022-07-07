@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Serdeha Yazar Paneli | @ViewBag.Title</title>
+  @await Html.PartialAsync("_AuthorCssPartialView")
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:~/authorTemplate/partials/_navbar.html -->
+    @await Html.PartialAsync("_AuthorNavBarPartialView")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+            @await Html.PartialAsync("_AuthorSidebarPartialView")
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            @RenderBody()
+          </div>
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:~/authorTemplate/partials/_footer.html -->
+        @await Html.PartialAsync("_AuthorFooterPartialView")
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  @await Html.PartialAsync("_AuthorJsPartialView")
+</body>
+
+</html>

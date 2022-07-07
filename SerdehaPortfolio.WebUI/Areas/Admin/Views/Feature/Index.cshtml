@@ -1,0 +1,48 @@
+﻿@model Feature
+@{
+    ViewBag.Title = "Sunum Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Sunum Sayfasını Güncelle</h4>
+            <form asp-area="Admin" asp-action="Index" asp-controller="Feature" method="post">
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+                <div class="form-group">
+                    <label class="form-control-label">Sunum İsmi</label>
+                    <input type="text" class="form-control" placeholder="Sunum Adı Giriniz" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Sunum Başlığı</label>
+                    <input type="text" class="form-control" placeholder="Sunum Başlığı Giriniz" asp-for="Title">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Sunum Açıklama</label>
+                    <input type="text" class="form-control" placeholder="Sunum İçeriği Giriniz" asp-for="Header">
+                    <span asp-validation-for="Header" class="text-danger"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-11">
+                        <button type="submit" class="btn btn-primary">Kaydet</button>
+                    </div>
+                    <div class="col-md-1">
+                        <a class="btn btn-danger text-right" asp-area="Admin" asp-controller="Home" asp-action="Index">Vazgeç</a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+﻿@model Portfolio
+@{
+    ViewBag.Title = $"{Model.Name} Güncelleniyor";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">@Model.Name Projesini Güncelle</h4>
+            <form asp-area="Admin" asp-action="Update" asp-controller="Portfolio" enctype="multipart/form-data" method="post">
+
+                <input type="hidden" asp-for="PortfolioId" />
+                <input type="hidden" asp-for="ImageUrl" />
+                <input type="hidden" asp-for="ThumbnailImageUrl" />
+
+                @if (ViewContext.ModelState.ErrorCount > 0)
+                {
+                    <div class="form-group alert alert-danger" asp-validation-summary="All"></div>
+                }
+
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Adı</label>
+                    <input type="text" class="form-control" placeholder="Proje Adı Giriniz" asp-for="Name">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Website Adı</label>
+                    <input type="text" class="form-control" placeholder="Proje Website Adını Giriniz" asp-for="WebsiteName">
+                    <span asp-validation-for="WebsiteName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Website Adresi</label>
+                    <input type="text" class="form-control" placeholder="Proje Adresini Giriniz" asp-for="WebsiteUrl">
+                    <span asp-validation-for="WebsiteUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Şu anki Proje Resmi</label>
+                    <img src="~/img/portfolios/@Model.ImageUrl" style="width: 70px;height: 70px" class="form-control img-fluid img-thumbnail" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Resmi</label>
+                    <input type="file" class="form-control-file" asp-for="ImageFormFile">
+                    <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Şu anki Thumbnail</label>
+                    <img src="~/img/portfolios/portfolioThumbnails/@Model.ThumbnailImageUrl" style="width: 70px;height: 70px" class="form-control img-fluid img-thumbnail" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label">Proje Thumbnail Resmi</label>
+                    <input type="file" class="form-control-file" asp-for="ThumbnailFormFile">
+                    <span asp-validation-for="ThumbnailImageUrl" class="text-danger"></span>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mr-2">Güncelle</button>
+                <a asp-action="Index" class="btn btn-danger">Vazgeç</a>
+
+            </form>
+        </div>
+    </div>
+</div>

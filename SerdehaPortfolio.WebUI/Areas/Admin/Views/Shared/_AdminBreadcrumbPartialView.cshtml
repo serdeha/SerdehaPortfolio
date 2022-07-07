@@ -1,0 +1,13 @@
+﻿<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"> <a asp-action="Index" asp-controller="Dashboard" asp-area="Admin">Anasayfa</a> </li>
+        @if (ViewBag.FirstItem != null)
+        {
+            <li class="breadcrumb-item">@ViewBag.FirstItem</li>
+            if (ViewBag.SecondItem != null)
+            {
+                <li class="breadcrumb-item active" aria-current="page">@ViewBag.SecondItem</li>
+            }
+        }
+    </ol>
+</nav>
